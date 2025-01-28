@@ -1,11 +1,10 @@
 
 # Description
 
-An implementation of popular evaluation metrics that are commonly used in survival prediction 
-  including Concordance Index, Brier Score, Integrated Brier Score, 
+An implementation of popular evaluation metrics that are commonly used in survival prediction including Concordance Index, Brier Score, Integrated Brier Score, 
   Integrated Square Error, Integrated Absolute Error and Mean Absolute Error.
-  For a detailed information, see (Ishwaran H, Kogalur UB, Blackstone EH and Lauer MS (2008) [doi:10.1214/08-AOAS169](https://doi.org/10.1214/08-AOAS169)) and
-  (Moradian H, Larocque D and Bellavance F (2017) [doi:10.1007/s10985-016-9372-1](https://doi.org/10.1007/s10985-016-9372-1)) for different evaluation metrics.
+  For a detailed information, see (Ishwaran H, Kogalur UB, Blackstone EH and Lauer MS (2008) <doi:10.1214/08-AOAS169>) , 
+  (Moradian H, Larocque D and Bellavance F (2017) <doi:10.1007/s10985-016-9372-1>), (Hanpu Zhou, Hong Wang, Sizheng Wang and Yi Zou (2023) <doi:10.32614/rj-2023-009>) for different evaluation metrics.
 
 ## Installation
 
@@ -17,7 +16,7 @@ install.packages("SurvMetrics")
 or Install devtools and build the development version by:
 ``` r
 install.packages("devtools", repos = "https://cloud.r-project.org/")
-devtools::install_github("skyee1/SurvMetrics")
+devtools::install_github("whcsu/SurvMetrics")
 ```
 
 ## Example
@@ -38,9 +37,9 @@ If you use SurvMetrics in your research and we would greatly appreciate if you c
 ```
 @Manual{,
     title = {SurvMetrics: Predictive Evaluation Metrics in Survival Analysis},
-    author = {Hanpu Zhou and Xuewei Cheng and Sizheng Wang and Yi Zou and Hong Wang},
-    year = {2022},
-    note = {R package version 0.5.0},
-    url = {https://github.com/skyee1/SurvMetrics},
+    author = {Hong Wang and Hanpu Zhou and Xuewei Cheng and Sizheng Wang and Yi Zou},
+    year = {2025},
+    note = {R package version 0.5.1},
+    url = {https://github.com/whcsu/SurvMetrics},
   }
 ```
