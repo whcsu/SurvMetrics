@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1628128526667.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4170434495",
+    "id" : "213D1034",
+    "lastKnownWriteTime" : 1661358929,
+    "last_content_update" : 1661358929211,
+    "path" : "E:/桌面/1-论文＋参考书/0-包/0000-最终投稿文件/Rjournal 修稿意见/SurvMetrics (5)/R/IBS.R",
+    "project_path" : "R/IBS.R",
+    "properties" : {
+        "cursorPosition" : "197,10",
+        "scrollLine" : "185"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1628128531154.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BD972147",
+    "lastKnownWriteTime" : 1661359004,
+    "last_content_update" : 1661359004402,
+    "path" : "E:/桌面/1-论文＋参考书/0-包/0000-最终投稿文件/Rjournal 修稿意见/SurvMetrics (5)/R/MAE.R",
+    "project_path" : "R/MAE.R",
+    "properties" : {
+        "cursorPosition" : "49,21",
+        "scrollLine" : "33"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1628126481288.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "41|48|184|0|\n",
+    "hash" : "0",
+    "id" : "3CCA5234",
+    "lastKnownWriteTime" : 1661357277,
+    "last_content_update" : 1661357524392,
+    "path" : "E:/桌面/1-论文＋参考书/0-包/0000-最终投稿文件/Rjournal 修稿意见/SurvMetrics (5)/R/Brier.R",
+    "project_path" : "R/Brier.R",
+    "properties" : {
+        "cursorPosition" : "41,23",
+        "scrollLine" : "24"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

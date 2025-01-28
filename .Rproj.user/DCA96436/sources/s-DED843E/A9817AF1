@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1661359019547.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3059792310",
+    "id" : "A9817AF1",
+    "lastKnownWriteTime" : 1661359055,
+    "last_content_update" : 1661359055101,
+    "path" : "E:/桌面/1-论文＋参考书/0-包/0000-最终投稿文件/Rjournal 修稿意见/SurvMetrics (5)/tests/testthat/test-MAE.R",
+    "project_path" : "tests/testthat/test-MAE.R",
+    "properties" : {
+        "cursorPosition" : "7,50",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 19,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

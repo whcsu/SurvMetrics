@@ -1,0 +1,42 @@
+library(SurvMetrics)
+library(caret)
+library(randomForestSRC)
+library(survival)  
+library(pec)
+library(ggplot2)
+set.seed(123)
+#Initialization
+metrics_cox = 0
+metrics_rsf = 0
+for (i in 1:20) {
+  
+  mydata = SDGM4(N = 100, p = 20, c_step = 0.2)
+  index_data = createFolds(1:nrow(mydata), 2)
+  train_data = mydata[index_data[[1]],]
+  test_data = mydata[index_data[[2]],]
+  
+  #fit the models
+  fitrsf = rfsrc(Surv(time, status)~., data = train_data, nsplit = 3, ntree = 500)
+  mat_rsf = predict(fitrsf, test_data)$survival
+  
+  dis_time = fitrsf$time.interest
+  fitcox = coxph(Surv(time, status)~., data = train_data, x = TRUE)
+  mat_cox = predictSurvProb(fitcox, test_data, dis_time)
+  
+  #calculate the C index
+  med_index = median(1:length(dis_time))
+  surv_obj = Surv(test_data$time, test_data$status)
+  
+  #C index for Cox
+  metrics_cox[i] = Cindex(surv_obj, predicted = mat_cox[, med_index])
+  #C index for RSF
+  metrics_rsf[i] = Cindex(surv_obj, predicted = mat_rsf[, med_index])
+  
+}
+
+data_CI = data.frame('Cindex' = c(metrics_cox, metrics_rsf),
+                     'model' = c(rep('Cox', 20), rep('RSF', 20)))
+
+ggplot(data_CI, aes(x = model, y = Cindex, fill = model)) +
+  geom_boxplot() +
+  scale_fill_manual(values = c("#FFBBCC", "#88CCFF"))
