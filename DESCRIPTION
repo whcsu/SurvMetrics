@@ -3,18 +3,18 @@ Type: Package
 Title: Predictive Evaluation Metrics in Survival Analysis
 Version: 0.5.1
 Date: 2025-01-16
-Authors@R: c( person("Hong", "Wang", role = c("aut"), email = "wh@csu.edu.cn"),
-              person("Hanpu", "Zhou", role = c("aut", "cre"), email = "974637739@qq.com"),
+Authors@R: c( person("Hanpu", "Zhou", role = c("aut"), email = "974637739@qq.com"),
               person("Xuewei", "Cheng", role = c("aut"), email = "xwcheng@hunnu.edu.cn"),
               person("Sizheng", "Wang", role = c("aut"), email = "964555106@qq.com"),
-              person("Yi", "Zou", role = c("aut"), email = "2584695843@qq.com")           
+              person("Yi", "Zou", role = c("aut"), email = "2584695843@qq.com") ,
+              person("Hong", "Wang", role = c("aut","cre"), email = "wh@csu.edu.cn")			  
               )
 Author: 
-  Hong Wang [aut, cre],
-  Hanpu Zhou [aut, cre], 
+  Hanpu Zhou [aut], 
   Xuewei Cheng [aut],
   Sizheng Wang [aut],
-  Yi Zou [aut]  
+  Yi Zou [aut],
+  Hong Wang [aut, cre]
 Maintainer: Hong Wang <wh@csu.edu.cn>
 Description: An implementation of popular evaluation metrics that are commonly used in survival prediction including Concordance Index, Brier Score, Integrated Brier Score, 
   Integrated Square Error, Integrated Absolute Error and Mean Absolute Error.
@@ -37,4 +37,5 @@ URL: https://github.com/whcsu/SurvMetrics
 Packaged: 2025-01-16 04:52:32 UTC;
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+Depends: R (>= 3.5.0)
 RoxygenNote: 7.3.2

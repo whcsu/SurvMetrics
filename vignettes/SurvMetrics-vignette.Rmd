@@ -72,7 +72,6 @@ where, $\delta_i$ is the survival status of sample $i$ (0 means censoring, 1 mea
 ### 3.2 Example on CI
 
 Take simulation data set 4 as an example. First, we randomly divide the data into training set and test set. Then, using Cox and RSF models, we can get the corresponding CI values.
-
 ```{r fig.align='center', message=FALSE, warning=FALSE, results='hide'}
 library(SurvMetrics)
 library(caret)
@@ -80,12 +79,16 @@ library(randomForestSRC)
 library(survival)  
 library(pec)
 library(ggplot2)
-set.seed(123)
 Sys.setenv("OMP_THREAD_LIMIT" = 1)
+```
+
+
+```{r fig.align='center', message=FALSE, warning=FALSE, results='hide',eval=FALSE,purl=FALSE}
+set.seed(123)
 #Initialization
 metrics_cox = 0
 metrics_rsf = 0
-for (i in 1:20) {
+for (i in 1:10) {
   
   mydata = SDGM4(N = 100, p = 20, c_step = 0.2)
   index_data = createFolds(1:nrow(mydata), 2)
@@ -108,12 +111,21 @@ for (i in 1:20) {
   metrics_cox[i] = Cindex(surv_obj, predicted = mat_cox[, med_index])
   #C index for RSF
   metrics_rsf[i] = Cindex(surv_obj, predicted = mat_rsf[, med_index])
-  
 }
 
 data_CI = data.frame('Cindex' = c(metrics_cox, metrics_rsf),
                      'model' = c(rep('Cox', 20), rep('RSF', 20)))
+```
 
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+#because of the long running time, we save the results within the package
+simres=system.file("extdata", "SimRes.RData", package = "SurvMetrics")
+load(simres)
+```
+
+
+```{r fig.align='center', warning=FALSE, results='hide'}
 ggplot(data_CI, aes(x = model, y = Cindex, fill = model)) +
   geom_boxplot() +
   scale_fill_manual(values = c("#FFBBCC", "#88CCFF"))
@@ -148,7 +160,7 @@ At the same time, we found that BS depends on the selection of time point $t^*$.
 
 Again, take simulation data set 4 as an example. First, we randomly divide the data into training set and test set. Then, using Cox and RSF models, we get the corresponding Brier Scores. 
 
-```{r fig.align='center', warning=FALSE, results='hide'}
+```{r fig.align='center', message=FALSE, warning=FALSE, results='hide',eval=FALSE,purl=FALSE}
 #Initialization
 metrics_cox = 0
 metrics_rsf = 0
@@ -180,9 +192,13 @@ for (i in 1:10) {
   
 }
 
+
 data_BS = data.frame('BS' = c(metrics_cox, metrics_rsf),
                      'model' = c(rep('Cox', 10), rep('RSF', 10)))
+```
 
+
+```{r fig.align='center', warning=FALSE, results='hide'}
 ggplot(data_BS, aes(x = model, y = BS, fill = model)) +
   geom_boxplot() +
   scale_fill_manual(values = c("#FFBBCC", "#88CCFF"))
@@ -202,12 +218,12 @@ At the same time, one of the reasons why BS and IBS are not as widely used as CI
 
 Also, we take simulation data set 4 as an example. First, we randomly divide the data into training set and test set. Then, using Cox and RSF models, we get the corresponding IBS values:
 
-```{r fig.align='center', message=FALSE, warning=FALSE, results='hide'}
+```{r fig.align='center', message=FALSE, warning=FALSE, results='hide',eval=FALSE,purl=FALSE}
 #Initialization
 metrics_cox = 0
 metrics_rsf = 0
 set.seed(123)
-for (i in 1:5) {
+for (i in 1:10) {
   
   mydata = SDGM4(N = 100, p = 20, c_step = -0.5)
   index_data = createFolds(1:nrow(mydata), 2)
@@ -237,6 +253,10 @@ for (i in 1:5) {
 data_IBS = data.frame('IBS' = c(metrics_cox, metrics_rsf),
                      'model' = c(rep('Cox', 5), rep('RSF', 5)))
 
+```
+
+
+```{r fig.align='center', warning=FALSE, results='hide'}
 ggplot(data_IBS, aes(x = model, y = IBS, fill = model)) +
   geom_boxplot() +
   scale_fill_manual(values = c("#FFBBCC", "#88CCFF"))
@@ -258,7 +278,7 @@ where, $S(t)$ and $\hat{S}(t)$ represent the true survival function and the pred
 
 Also, we take simulation data set 4 as an example. First, we randomly divide the data into training set and test set. Then, using Cox and RSF models, we get the corresponding IAE and ISE values:
 
-```{r fig.align='center', message=FALSE, warning=FALSE, results='hide'}
+```{r fig.align='center', message=FALSE, warning=FALSE, results='hide',eval=FALSE,purl=FALSE}
 #Initialization
 metrics_cox_IAE = 0
 metrics_rsf_IAE = 0
@@ -302,6 +322,10 @@ data_IAE = data.frame('IAE' = c(metrics_cox_IAE, metrics_rsf_IAE),
 data_ISE = data.frame('ISE' = c(metrics_cox_ISE, metrics_rsf_ISE),
                      'model' = c(rep('Cox', 10), rep('RSF', 10)))
 
+```
+
+
+```{r fig.align='center', warning=FALSE, results='hide'}
 P1 = ggplot(data_IAE, aes(x = model, y = IAE, fill = model)) +
   geom_boxplot() +
   scale_fill_manual(values = c("#FFBBCC", "#88CCFF")) +

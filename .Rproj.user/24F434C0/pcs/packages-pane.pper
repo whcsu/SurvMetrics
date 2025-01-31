@@ -1,7 +1,0 @@
-{
-    "installOptions": {
-        "installFromRepository": true,
-        "libraryPath": "D:/R/Microsoft/R Open/R-4.0.2/library",
-        "installDependencies": true
-    }
-}
