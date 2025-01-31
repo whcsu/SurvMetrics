@@ -35,11 +35,15 @@ Cindex(Surv(time,status),predicted)
 ## Citation
 If you use SurvMetrics in your research and we would greatly appreciate if you could use the following:
 ```
-@Manual{,
-    title = {SurvMetrics: Predictive Evaluation Metrics in Survival Analysis},
-    author = {Hong Wang and Hanpu Zhou and Xuewei Cheng and Sizheng Wang and Yi Zou},
-    year = {2025},
-    note = {R package version 0.5.1},
-    url = {https://github.com/whcsu/SurvMetrics},
-  }
+@article{RJ-2023-009,
+  author = {Zhou, Hanpu and Wang*, Hong and Wang, Sizheng and Zou, Yi},
+  title = {SurvMetrics: An R package for Predictive Evaluation Metrics in Survival Analysis},
+  journal = {The R Journal},
+  year = {2023},
+  note = {https://rjournal.github.io/},
+  volume = {14},
+  issue = {4},
+  issn = {2073-4859},
+  pages = {252-263}
+}
 ```
